@@ -1,5 +1,6 @@
-# Use a base image that supports systemd, for example, Ubuntu 
+# Use a base image that supports systemd, for example, Ubuntu
 FROM ubuntu:20.04
+
 # Install necessary packages
 RUN apt-get update && \
 apt-get install -y shellinabox && \
@@ -11,4 +12,4 @@ RUN echo 'root:root' | chpasswd
 EXPOSE 4200
 
 # Start shellinabox
-CMD ["/usr/bin/shellinabox", "-t", "-s", "/:LOGIN"]
+CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
